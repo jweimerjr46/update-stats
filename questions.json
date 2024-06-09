@@ -1,0 +1,57 @@
+[
+	{
+		"question": "What does the following Python code do?\n\n[code]def add(a, b):[code]\n    return a + b",
+		"options": [
+			"Adds two numbers",
+			"Concatenates two strings",
+			"Subtracts b from a",
+			"Multiplies a and b"
+		],
+		"correct_answer": "Adds two numbers",
+		"xp": "10"
+	},
+	{
+		"question": "What will be the output of the following code?\n\nprint(\"Hello, World!\")",
+		"options": [
+			"Hello, World!",
+			"Hello World",
+			"Error",
+			"None"
+		],
+		"correct_answer": "Hello, World!",
+		"xp": "10"
+	},
+	{
+		"question": "What does the following Python code do?\n\ndef subtract(a, b):\n    return a - b",
+		"options": [
+			"Adds two numbers",
+			"Concatenates two strings",
+			"Subtracts b from a",
+			"Multiplies a and b"
+		],
+		"correct_answer": "Subtracts b from a",
+		"xp": "10"
+	},
+	{
+		"question": "What will be the output of the following code?\n\nprint(\"Goodbye, World!\")",
+		"options": [
+			"Goodbye, World!",
+			"Goodbye World",
+			"Error",
+			"None"
+		],
+		"correct_answer": "Goodbye, World!",
+		"xp": "10"
+	},
+	{
+		"question": "What does the following Python code do?\n\ndef multiply(a, b):\n    return a * b",
+		"options": [
+			"Adds two numbers",
+			"Concatenates two strings",
+			"Subtracts b from a",
+			"Multiplies a and b"
+		],
+		"correct_answer": "Multiplies a and b",
+		"xp": "10"
+	}
+]
