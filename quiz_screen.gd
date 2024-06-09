@@ -162,7 +162,7 @@ func _ready():
 	coin_timer.connect("timeout", add_money)
 	coin_timer.start()
 		
-	var file = FileAccess.open("res://questions3.json", FileAccess.READ)
+	var file = FileAccess.open("res://questions.json", FileAccess.READ)
 	if file:
 		var json_text = file.get_as_text()
 		var json = JSON.new()

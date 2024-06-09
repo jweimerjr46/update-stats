@@ -1,6 +1,7 @@
 [
 	{
-		"question": "What does the following Python code do?\n\n[code]def add(a, b):[code]\n    return a + b",
+		"question": "What does the following Python code do?\n",
+		"code": "[code]def add(a, b):\n    return a + b\n[/code]",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -8,10 +9,11 @@
 			"Multiplies a and b"
 		],
 		"correct_answer": "Adds two numbers",
-		"xp": "10"
+		"xp": "5"
 	},
 	{
-		"question": "What will be the output of the following code?\n\nprint(\"Hello, World!\")",
+		"question": "What will be the output of the following code?\n",
+		"code": "[code]print(\"Hello, World!\")\n[/code]",
 		"options": [
 			"Hello, World!",
 			"Hello World",
@@ -22,7 +24,8 @@
 		"xp": "10"
 	},
 	{
-		"question": "What does the following Python code do?\n\ndef subtract(a, b):\n    return a - b",
+		"question": "What does the following Python code do?\n",
+		"code": "[code]def subtract(a, b):\n    return a - b\n[/code]",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -30,10 +33,11 @@
 			"Multiplies a and b"
 		],
 		"correct_answer": "Subtracts b from a",
-		"xp": "10"
+		"xp": "15"
 	},
 	{
-		"question": "What will be the output of the following code?\n\nprint(\"Goodbye, World!\")",
+		"question": "What will be the output of the following code?\n",
+		"code": "[code]print(\"Goodbye, World!\")\n[/code]",
 		"options": [
 			"Goodbye, World!",
 			"Goodbye World",
@@ -41,10 +45,11 @@
 			"None"
 		],
 		"correct_answer": "Goodbye, World!",
-		"xp": "10"
+		"xp": "20"
 	},
 	{
-		"question": "What does the following Python code do?\n\ndef multiply(a, b):\n    return a * b",
+		"question": "What does the following Python code do?\n",
+		"code": "[code]def multiply(a, b):\n    return a * b\n[/code]",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -52,6 +57,6 @@
 			"Multiplies a and b"
 		],
 		"correct_answer": "Multiplies a and b",
-		"xp": "10"
+		"xp": "25"
 	}
 ]
