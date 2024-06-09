@@ -186,6 +186,8 @@ func _ready():
 	code_label.text = current_question["code"]
 	correct_answer = current_question['correct_answer']
 	question_xp = int(current_question['xp'])
+	question_xp_label.text = "Question XP: " + str(question_xp)
+	
 
 	buttons = choices_group.get_buttons()
 
