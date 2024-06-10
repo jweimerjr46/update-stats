@@ -174,7 +174,7 @@ custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 
 [node name="LevelLabel" type="Label" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(250, 100)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 35
@@ -184,7 +184,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="XPLabel" type="Label" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(250, 100)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 35
@@ -193,7 +193,7 @@ text = "XP: 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer3"]
+[node name="NextLevelProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 

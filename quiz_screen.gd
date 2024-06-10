@@ -139,12 +139,12 @@ func _ready():
 	xp_label = $HBoxContainer/VBoxContainer3/XPLabel
 	correct_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/CorrectLabel
 	total_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/TotalLabel
-	timer_label = $HBoxContainer/VBoxContainer/HBoxContainer2/TimerLabel
+	timer_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/TimerLabel
 	food_label = $HBoxContainer/VBoxContainer2/FoodLabel
 	money_label = $HBoxContainer/VBoxContainer2/CoinLabel
 	bank_label = $HBoxContainer/VBoxContainer2/BankLabel
 	$HBoxContainer/VBoxContainer2/NameLabel.text = player_name
-	question_xp_label = $HBoxContainer/VBoxContainer/QuestionXPLabel
+	question_xp_label = $HBoxContainer/MarginContainer/VBoxContainer/QuestionXPLabel
 	level_label = $HBoxContainer/VBoxContainer3/LevelLabel
 	
 	food_label.text = "Food: " + str(food)
