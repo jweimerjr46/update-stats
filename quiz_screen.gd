@@ -304,10 +304,14 @@ func button_pressed(button):
 			xp += question_xp * (0.5 ** times_wrong)
 			times_wrong = 0
 			xp_label.text = "XP: " + str(xp)
-			xp_progress_bar.value = xp
+			# Working on the XP level progress bar
+			xp_progress_bar.value = xp - level_dictionary[level]
 			if xp > level_dictionary[level + 1]:
 				level += 1
 				level_label.text = "Level: " + str(level)
+				xp_progress_bar.value = xp - level_dictionary[level]
+				xp_progress_bar.max_value = level_dictionary[level + 1] - level_dictionary[level]
+				print(xp_progress_bar.max_value)
 			if player_energy > 0:
 				player_health += 2
 			correct_run += 1
@@ -327,8 +331,8 @@ func button_pressed(button):
 					money += price_sell_food * to_sell
 					update_money()
 				food = 100				
-			print("Run: " + str(correct_run))
-			print(food)
+			#print("Run: " + str(correct_run))
+			#print(food)
 			# print(progress.value)
 			#if progress.value >= 100:     # Game is over
 				#timer_started = false
