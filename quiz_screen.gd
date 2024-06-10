@@ -63,6 +63,9 @@ Sound effects:
 	When something gets to 100%
 '''
 
+# Colors
+
+
 @export var choices_group: ButtonGroup
 var level_dictionary = Global.level_dictionary
 
@@ -385,3 +388,18 @@ func update_money():
 func _on_button_pressed():
 	message_window.hide()
 	timer_started = true
+	
+	
+# Function to disable a button and change its appearance
+func disable_button(button: Button):
+	# Modulate the button's color to indicate it is not correct
+	button.modulate = Color(0.5, 0.5, 0.5) # Example: gray color
+
+	# Change the button's text color
+	var font = button.get_theme_font("font")
+	var new_font = font.duplicate() # Duplicate the font to avoid changing the original
+	new_font.color = Color(1, 0, 0) # Example: red color
+	button.add_font_override("font", new_font)
+
+	# Disable the button
+	button.disabled = true

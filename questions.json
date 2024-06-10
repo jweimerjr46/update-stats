@@ -58,5 +58,17 @@
 		],
 		"correct_answer": "Multiplies a and b",
 		"xp": "25"
+	},
+	{
+		"question": "What is abstraction?",
+		"code": "",
+		"options": [
+			"Hides complexity",
+			"Concatenates two strings",
+			"Gives abs traction",
+			"Makes it use less code"
+		],
+		"correct_answer": "Hides complexity",
+		"xp": "4"
 	}
 ]
