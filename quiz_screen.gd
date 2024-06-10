@@ -132,6 +132,8 @@ var correct_list = [1, 1, 1, 1, 1,
 					1, 1, 1, 1, 1]
 var question_xp = 0
 
+var times_wrong = 0
+
 
 func _ready():
 	question_label = $HBoxContainer/MarginContainer/VBoxContainer/QuestionLabel
@@ -280,6 +282,7 @@ func reset_questions():
 
 
 func button_pressed(button):
+	
 	if not timer_started:
 		timer_started = true
 
@@ -288,12 +291,13 @@ func button_pressed(button):
 		questions_answered += 1
 		total_label.text = "Attempts: " + str(questions_answered)
 
-		if button.text == correct_answer:
+		if button.text == correct_answer and times_wrong < 3:
 			anim.play("jump")
 			sound_player.stream = correct_sound
 			sound_player.play()
 			questions_correct += 1
-			xp += question_xp
+			xp += question_xp * (0.5 ** times_wrong)
+			times_wrong = 0
 			xp_label.text = "XP: " + str(xp)
 			if xp > level_dictionary[level + 1]:
 				level += 1
@@ -327,6 +331,7 @@ func button_pressed(button):
 			get_next_question()
 		else:
 			anim.play("wrong")
+			times_wrong += 1
 			sound_player.stream = incorrect_sound
 			sound_player.play()
 			player_health -= 4
@@ -337,6 +342,9 @@ func button_pressed(button):
 				correct_percentage = correct_list.count(1)
 			question_xp_label.text = "YOU ARE WRONG!"
 		button.set_pressed_no_signal(false)
+		if times_wrong == 3:
+			get_next_question()
+			times_wrong = 0
 	
 	happiness_bar.value = correct_percentage * 5
 	food_label.text = "Food: " + str(food)
