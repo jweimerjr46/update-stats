@@ -304,6 +304,7 @@ func button_pressed(button):
 			xp += question_xp * (0.5 ** times_wrong)
 			times_wrong = 0
 			xp_label.text = "XP: " + str(xp)
+			xp_progress_bar.value = xp
 			if xp > level_dictionary[level + 1]:
 				level += 1
 				level_label.text = "Level: " + str(level)

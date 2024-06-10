@@ -196,6 +196,8 @@ vertical_alignment = 1
 [node name="NextLevelProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
+max_value = 200.0
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(0, 400)
