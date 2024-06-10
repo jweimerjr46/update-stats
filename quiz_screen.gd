@@ -134,11 +134,11 @@ var question_xp = 0
 
 
 func _ready():
-	question_label = $HBoxContainer/VBoxContainer/QuestionLabel
-	code_label = $HBoxContainer/VBoxContainer/RichTextLabel
+	question_label = $HBoxContainer/MarginContainer/VBoxContainer/QuestionLabel
+	code_label = $HBoxContainer/MarginContainer/VBoxContainer/CodeLabel
 	xp_label = $HBoxContainer/VBoxContainer3/XPLabel
-	correct_label = $HBoxContainer/VBoxContainer/HBoxContainer/CorrectLabel
-	total_label = $HBoxContainer/VBoxContainer/HBoxContainer/TotalLabel
+	correct_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/CorrectLabel
+	total_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/TotalLabel
 	timer_label = $HBoxContainer/VBoxContainer/HBoxContainer2/TimerLabel
 	food_label = $HBoxContainer/VBoxContainer2/FoodLabel
 	money_label = $HBoxContainer/VBoxContainer2/CoinLabel
