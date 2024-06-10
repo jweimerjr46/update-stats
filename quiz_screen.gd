@@ -84,6 +84,7 @@ var level_label
 var health_bar
 var energy_bar
 var happiness_bar
+var xp_progress_bar
 
 @onready var message_window = $Window
 @onready var message_label = $Window/VBoxContainer/MessageLabel
@@ -160,6 +161,7 @@ func _ready():
 	health_bar = $HBoxContainer/VBoxContainer2/HBoxContainer/HealthBar
 	energy_bar = $HBoxContainer/VBoxContainer2/HBoxContainer2/EnergyBar
 	happiness_bar = $HBoxContainer/VBoxContainer2/HBoxContainer3/HappinessBar
+	xp_progress_bar = $HBoxContainer/VBoxContainer3/NextLevelProgressBar
 	health_bar.value = player_health
 	energy_bar.value = player_energy
 	happiness_bar.value = correct_percentage * 5
