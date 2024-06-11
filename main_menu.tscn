@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dojmx0jr7in00"]
+[gd_scene load_steps=3 format=3 uid="uid://dojmx0jr7in00"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_y00vl"]
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_bebh7"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -62,5 +64,9 @@ text = "def square():
 		fd(100)
 		rt(90)"
 editable = false
+selecting_enabled = false
+middle_mouse_paste_enabled = false
+syntax_highlighter = SubResource("CodeHighlighter_bebh7")
+highlight_all_occurrences = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

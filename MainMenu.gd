@@ -2,10 +2,15 @@ extends Control
 
 @onready var game_code = $VBoxContainer/GameCode
 @onready var code_label = $VBoxContainer/Codelabel
+@onready var syntax_label = $VBoxContainer/CodeEdit
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	syntax_label.gutters_draw_line_numbers = true
 	game_code.grab_focus()
+	for keyword in ["for"]:
+		syntax_label.syntax_highlighter.add_keyword_color(keyword, Color("#ff8ccc"))
 	
 
 
