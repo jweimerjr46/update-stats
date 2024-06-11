@@ -164,17 +164,17 @@ func _ready():
 	"try", "while", "with", "yield"
 ]
 
+	# adds keywords and color for keywords
 	for keyword in python_keywords:
 		code_label.syntax_highlighter.add_keyword_color(keyword, Color("#569cd6"))
-	#code_label.syntax_highlighter.number_color = Color(181, 206, 168)
-	#code_label.syntax_highlighter.function_color = Color("#9CDCFE")
+	
+	# formats strings
 	code_label.syntax_highlighter.add_color_region('"', '"', Color("#6a9955"))
+	code_label.syntax_highlighter.add_color_region("'", "'", Color("#6a9955"))
+	
+	# formats comments
 	code_label.syntax_highlighter.add_color_region('#', '', Color("#211f1f"))
-	
-	
-	
-	#code_label.syntax_highlighter.
-	
+		
 	coin_timer = $Timer
 	
 	health_bar = $HBoxContainer/VBoxContainer2/HBoxContainer/HealthBar
