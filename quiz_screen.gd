@@ -141,7 +141,7 @@ var times_wrong = 0
 
 func _ready():
 	question_label = $HBoxContainer/MarginContainer/VBoxContainer/QuestionLabel
-	code_label = $HBoxContainer/MarginContainer/VBoxContainer/CodeLabel
+	code_label = $HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/CodeLabel
 	xp_label = $HBoxContainer/VBoxContainer3/XPLabel
 	correct_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/CorrectLabel
 	total_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/TotalLabel

@@ -11,8 +11,6 @@ func _ready():
 	game_code.grab_focus()
 	for keyword in ["for"]:
 		syntax_label.syntax_highlighter.add_keyword_color(keyword, Color("#ff8ccc"))
-	
-
 
 @warning_ignore("unused_parameter")
 func _process(delta):
