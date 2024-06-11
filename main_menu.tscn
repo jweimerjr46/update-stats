@@ -53,4 +53,14 @@ text = "Code Text"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CodeEdit" type="CodeEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "def square():
+	for i in range(4):
+		fd(100)
+		rt(90)"
+editable = false
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
