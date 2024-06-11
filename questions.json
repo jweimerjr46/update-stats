@@ -1,7 +1,7 @@
 [
 	{
 		"question": "What does the following Python code do?\n",
-		"code": "[code]def add(a, b):\n    return a + b\n[/code]",
+		"code": "def add(a, b):\n    return a + b\n",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -9,11 +9,11 @@
 			"Multiplies a and b"
 		],
 		"correct_answer": "Adds two numbers",
-		"xp": "5"
+		"xp": "10"
 	},
 	{
 		"question": "What will be the output of the following code?\n",
-		"code": "[code]print(\"Hello, World!\")\n[/code]",
+		"code": "print(\"Hello, World!\")\n",
 		"options": [
 			"Hello, World!",
 			"Hello World",
@@ -25,7 +25,7 @@
 	},
 	{
 		"question": "What does the following Python code do?\n",
-		"code": "[code]def subtract(a, b):\n    return a - b\n[/code]",
+		"code": "def subtract(a, b):\n    return a - b\n",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -33,11 +33,11 @@
 			"Multiplies a and b"
 		],
 		"correct_answer": "Subtracts b from a",
-		"xp": "15"
+		"xp": "10"
 	},
 	{
 		"question": "What will be the output of the following code?\n",
-		"code": "[code]print(\"Goodbye, World!\")\n[/code]",
+		"code": "print(\"Goodbye, World!\")\n",
 		"options": [
 			"Goodbye, World!",
 			"Goodbye World",
@@ -45,11 +45,11 @@
 			"None"
 		],
 		"correct_answer": "Goodbye, World!",
-		"xp": "20"
+		"xp": "10"
 	},
 	{
 		"question": "What does the following Python code do?\n",
-		"code": "[code]def multiply(a, b):\n    return a * b\n[/code]",
+		"code": "def multiply(a, b):\n    return a * b\n",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -57,18 +57,6 @@
 			"Multiplies a and b"
 		],
 		"correct_answer": "Multiplies a and b",
-		"xp": "25"
-	},
-	{
-		"question": "What is abstraction?",
-		"code": "",
-		"options": [
-			"Hides complexity",
-			"Concatenates two strings",
-			"Gives abs traction",
-			"Makes it use less code"
-		],
-		"correct_answer": "Hides complexity",
-		"xp": "4"
+		"xp": "10"
 	}
 ]
