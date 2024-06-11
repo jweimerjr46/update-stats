@@ -13,3 +13,4 @@ var total_time_played = 0
 var bank = 0
 
 var level_dictionary = {0: 0, 1: 200, 2: 1200, 3: 5000}
+

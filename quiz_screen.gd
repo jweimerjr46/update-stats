@@ -167,14 +167,14 @@ func _ready():
 	# adds keywords and color for keywords
 	for keyword in python_keywords:
 		code_label.syntax_highlighter.add_keyword_color(keyword, Color("#569cd6"))
-	
+
 	# formats strings
 	code_label.syntax_highlighter.add_color_region('"', '"', Color("#6a9955"))
 	code_label.syntax_highlighter.add_color_region("'", "'", Color("#6a9955"))
-	
+
 	# formats comments
 	code_label.syntax_highlighter.add_color_region('#', '', Color("#211f1f"))
-		
+
 	coin_timer = $Timer
 	
 	health_bar = $HBoxContainer/VBoxContainer2/HBoxContainer/HealthBar
@@ -210,6 +210,7 @@ func _ready():
 	print(current_question)
 	question_label.text = current_question["question"]
 	code_label.text = current_question["code"]
+	code_label_size(code_label)
 	correct_answer = current_question['correct_answer']
 	question_xp = int(current_question['xp'])
 	question_xp_label.text = "Question XP: " + str(question_xp)
@@ -291,6 +292,7 @@ func get_next_question():
 	current_question = questions.pop_front()
 	question_label.text = current_question["question"]
 	code_label.text = current_question["code"]
+	code_label_size(code_label)
 	options = current_question['options']
 	question_xp = int(current_question['xp'])
 	question_xp_label.text = "Question XP: " + str(question_xp)
@@ -303,6 +305,15 @@ func get_next_question():
 func reset_questions():
 	questions = original_questions.duplicate()
 	questions.shuffle()
+	
+	
+func code_label_size(label):
+	if label.text.count("\n") == 0:
+		label.custom_minimum_size = Vector2(0, 75)
+	elif label.text.count("\n") == 1:
+		label.custom_minimum_size = Vector2(0, 150)
+	else:
+		label.custom_minimum_size = Vector2(0, 225)
 
 
 func button_pressed(button):
