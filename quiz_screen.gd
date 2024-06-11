@@ -156,6 +156,25 @@ func _ready():
 	food_label.text = "Food: " + str(food)
 	money_label.text = "Money: " + str(money)
 	
+	#code_label.syntax_highlighter.add_color_region('"', '"', Color("#e3af20"))
+	var python_keywords = [
+	"False", "None", "True", "and", "as", "assert", "async", "await", "break", "class", 
+	"continue", "def", "del", "elif", "else", "except", "finally", "for", "from", "global", 
+	"if", "import", "in", "is", "lambda", "nonlocal", "not", "or", "pass", "raise", "return", 
+	"try", "while", "with", "yield"
+]
+
+	for keyword in python_keywords:
+		code_label.syntax_highlighter.add_keyword_color(keyword, Color("#569cd6"))
+	#code_label.syntax_highlighter.number_color = Color(181, 206, 168)
+	#code_label.syntax_highlighter.function_color = Color("#9CDCFE")
+	code_label.syntax_highlighter.add_color_region('"', '"', Color("#6a9955"))
+	code_label.syntax_highlighter.add_color_region('#', '', Color("#211f1f"))
+	
+	
+	
+	#code_label.syntax_highlighter.
+	
 	coin_timer = $Timer
 	
 	health_bar = $HBoxContainer/VBoxContainer2/HBoxContainer/HealthBar

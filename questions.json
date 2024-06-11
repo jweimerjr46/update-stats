@@ -1,7 +1,7 @@
 [
 	{
 		"question": "What does the following Python code do?",
-		"code": "def add(a, b):\n    return a + b",
+		"code": "def add(a, b):\n    # return a + 5",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -25,7 +25,7 @@
 	},
 	{
 		"question": "What does the following Python code do?",
-		"code": "def subtract(a, b):\n    return a - b",
+		"code": "def subtract(a, b):\n    return a - b\n	subtract(4, 5)",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -49,7 +49,7 @@
 	},
 	{
 		"question": "What does the following Python code do?",
-		"code": "def multiply(a, b):\n    return a * b",
+		"code": "def multiply(a, 3):\n    return a * b",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
