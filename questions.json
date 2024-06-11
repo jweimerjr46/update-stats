@@ -1,7 +1,7 @@
 [
 	{
-		"question": "What does the following Python code do?\n",
-		"code": "def add(a, b):\n    return a + b\n",
+		"question": "What does the following Python code do?",
+		"code": "def add(a, b):\n    return a + b",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -12,8 +12,8 @@
 		"xp": "10"
 	},
 	{
-		"question": "What will be the output of the following code?\n",
-		"code": "print(\"Hello, World!\")\n",
+		"question": "What will be the output of the following code?",
+		"code": "print(\"Hello, World!\")",
 		"options": [
 			"Hello, World!",
 			"Hello World",
@@ -24,8 +24,8 @@
 		"xp": "10"
 	},
 	{
-		"question": "What does the following Python code do?\n",
-		"code": "def subtract(a, b):\n    return a - b\n",
+		"question": "What does the following Python code do?",
+		"code": "def subtract(a, b):\n    return a - b",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",
@@ -36,8 +36,8 @@
 		"xp": "10"
 	},
 	{
-		"question": "What will be the output of the following code?\n",
-		"code": "print(\"Goodbye, World!\")\n",
+		"question": "What will be the output of the following code?",
+		"code": "print(\"Goodbye, World!\")",
 		"options": [
 			"Goodbye, World!",
 			"Goodbye World",
@@ -48,8 +48,8 @@
 		"xp": "10"
 	},
 	{
-		"question": "What does the following Python code do?\n",
-		"code": "def multiply(a, b):\n    return a * b\n",
+		"question": "What does the following Python code do?",
+		"code": "def multiply(a, b):\n    return a * b",
 		"options": [
 			"Adds two numbers",
 			"Concatenates two strings",

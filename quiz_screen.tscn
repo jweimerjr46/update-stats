@@ -8,7 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://6lsqx7vwi1ax" path="res://assets/up.wav" id="5_nw8xe"]
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_e8wcv"]
-function_color = Color(0.443137, 0.105882, 0.211765, 1)
+number_color = Color(0, 0.639216, 0, 1)
+function_color = Color(0.733333, 0.415686, 0.772549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akapy"]
 bg_color = Color(0.92, 0.30728, 0.2392, 1)
@@ -269,6 +270,7 @@ autowrap_mode = 2
 visible = false
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_fonts/mono_font = ExtResource("3_urk0w")
 theme_override_font_sizes/normal_font_size = 37
 theme_override_font_sizes/mono_font_size = 37
@@ -286,10 +288,12 @@ layout_mode = 2
 theme_override_constants/margin_bottom = 30
 
 [node name="CodeLabel" type="CodeEdit" parent="HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme_override_colors/background_color = Color(0.301961, 0.301961, 0.301961, 1)
+theme_override_colors/font_color = Color(0.901961, 0.901961, 0.901961, 1)
 theme_override_colors/font_readonly_color = Color(0.921569, 0.921569, 0.921569, 1)
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 37
 text = "for i in range(5):
 	print(i)"
 editable = false
