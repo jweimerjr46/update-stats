@@ -1,49 +1,6 @@
 extends Control
 
 '''
-Happiness - based on the percentage correct in the last 20 questions
-Health - controlled by getting them correct/incorrect
-Energy - Get food to feed him by getting multiple correct in a row,
-	press "f" to feed the creature. Energy goes down twice as fast as
-	Health.
-	Each food gives you 5% energy.
-Coins - Earn coins by how long happiness is above 75% and energy is above
-	50%. If health drops to 0%, you lose half of your coins.
-	Coins can be used to play with the creature.
-	Playing with the creature increases its health , but
-	makes the creature hungry (takes away energy, press "p" to play).
-	Make classroom system to trade in coins. Will give them a new code
-	to use after trading in coins.  Can use for extra credit, stickers,
-	etc... Can also earn coins by doing tasks outside of game.
-
-
-	Notes:
-	When energy gets to 0, you can't earn anything.
-		You must feed the creature
-
-	If health gets to zero, must get happiness back to at least 75% to
-	start bringing health back up
-
-	Can sell food for coins (press "s" to sell food)
-	Can buy food using coins (press "b" to buy food)
-
-	Press "ctrl-x" to pause game and show save code
-		- also shows all of the player's stats
-	
-	show_code: screen pops up with code, two buttons (continue, close)
-		Game pauses when screen pops up
-		Game continues when the "Continue" button is pressed
-		Game closes when close is pressed'''
-
-'''
-Need to work on the Level system:
-	How should I do XP?
-	What animations should I use?
-		Animation when changing to next level
-	
-'''
-
-'''
 Animations:
 	Playing animation
 	When energy gets low (modulate color)
@@ -213,8 +170,7 @@ func _ready():
 	code_label_size(code_label)
 	correct_answer = current_question['correct_answer']
 	question_xp = int(current_question['xp'])
-	question_xp_label.text = "Question XP: " + str(question_xp)
-	
+	question_xp_label.text = "Question XP: " + str(question_xp)	
 
 	buttons = choices_group.get_buttons()
 
