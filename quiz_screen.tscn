@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://bvlq33ff2vsar"]
+[gd_scene load_steps=27 format=3 uid="uid://bvlq33ff2vsar"]
 
 [ext_resource type="Script" path="res://quiz_screen.gd" id="1_t4fky"]
 [ext_resource type="ButtonGroup" uid="uid://cv12kw52jwh78" path="res://choices_button_group.tres" id="2_gin4e"]
 [ext_resource type="Texture2D" uid="uid://ca3svolljmgya" path="res://assets/Pink_Monster_Jump_8.png" id="3_rscq8"]
-[ext_resource type="FontFile" uid="uid://dr7lkak8x87kx" path="res://COURBD.TTF" id="3_urk0w"]
 [ext_resource type="Texture2D" uid="uid://c0lg7bsrky5da" path="res://assets/Pink_Monster_Death_8.png" id="4_41yrh"]
 [ext_resource type="AudioStream" uid="uid://6lsqx7vwi1ax" path="res://assets/up.wav" id="5_nw8xe"]
 
@@ -267,22 +266,6 @@ text = "What does the following return?
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="CodeLabelNotUsed" type="RichTextLabel" parent="HBoxContainer/MarginContainer/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_fonts/mono_font = ExtResource("3_urk0w")
-theme_override_font_sizes/normal_font_size = 37
-theme_override_font_sizes/mono_font_size = 37
-bbcode_enabled = true
-text = "[code]def help(): 
-    return(\"help\") [code]
-"
-fit_content = true
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
@@ -346,7 +329,7 @@ button_group = ExtResource("2_gin4e")
 text = "Hamburger"
 
 [node name="QuestionXPLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/line_spacing = -1
@@ -363,7 +346,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="TimerLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Time: 00:00

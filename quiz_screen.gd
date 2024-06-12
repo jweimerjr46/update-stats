@@ -307,17 +307,12 @@ func reset_questions():
 	questions.shuffle()
 	
 	
-func code_label_size(label):
-	if label.text.count("\n") == 0:
-		label.custom_minimum_size = Vector2(0, 75)
-	elif label.text.count("\n") == 1:
-		label.custom_minimum_size = Vector2(0, 150)
-	else:
-		label.custom_minimum_size = Vector2(0, 225)
-
-
-func button_pressed(button):
+func code_label_size(label):	
+	var height = (label.text.count("\n") + 1) * 75
+	label.custom_minimum_size = Vector2(0, height )
 	
+	
+func button_pressed(button):	
 	if not timer_started:
 		timer_started = true
 
