@@ -207,7 +207,7 @@ func _ready():
 	randomize()
 	questions.shuffle()
 	current_question = questions.pop_front()
-	print(current_question)
+	#print(current_question)
 	question_label.text = current_question["question"]
 	code_label.text = current_question["code"]
 	code_label_size(code_label)
