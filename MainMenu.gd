@@ -41,23 +41,24 @@ func _on_start_button_pressed():
 
 
 func _on_load_data_button_pressed():
-	start_button.disabled = false	
-	if len(game_code.text) < 10:
-		Global.player_name = game_code.text
-	else:
-		var split_string = game_code.text.split()
-		#print(int(split_string[0] + split_string[1]))
-		Global.player_health = int(split_string[0] + split_string[1])
-	name_label.text = "Name: " + Global.player_name
-	level_label.text = "Level: " + str(Global.level)
-	xp_label.text = "XP: " + str(Global.xp)
-	bank_label.text = "Bank: " + str(Global.bank)
-	health_label.text = "Health: " + str(Global.player_health)
-	energy_label.text = "Energy: " + str(Global.energy)
-	happiness_label.text = "Happiness: " + str(Global.happiness)
-	food_label.text = "Food: " + str(Global.food)
-	money_label.text = "Money: " + str(Global.money)
-	correct_label.text = "Total Correct: " + str(Global.alltime_correct)
-	time_label.text = "Total Time: " + str(Global.total_time_played)
+	if game_code.text:
+		start_button.disabled = false
+		if len(game_code.text) < 10:
+			Global.player_name = game_code.text
+		else:
+			var split_string = game_code.text.split()
+			#print(int(split_string[0] + split_string[1]))
+			Global.player_health = int(split_string[0] + split_string[1])
+		name_label.text = "Name: " + Global.player_name
+		level_label.text = "Level: " + str(Global.level)
+		xp_label.text = "XP: " + str(Global.xp)
+		bank_label.text = "Bank: " + str(Global.bank)
+		health_label.text = "Health: " + str(Global.player_health)
+		energy_label.text = "Energy: " + str(Global.energy)
+		happiness_label.text = "Happiness: " + str(Global.happiness)
+		food_label.text = "Food: " + str(Global.food)
+		money_label.text = "Money: " + str(Global.money)
+		correct_label.text = "Total Correct: " + str(Global.alltime_correct)
+		time_label.text = "Total Time: " + str(Global.total_time_played)
 	
 	
