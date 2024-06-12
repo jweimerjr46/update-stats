@@ -278,6 +278,7 @@ func button_pressed(button):
 		total_label.text = "Attempts: " + str(questions_answered)
 
 		if button.text == correct_answer and times_wrong < 3:
+			alltime_correct += 1
 			anim.play("jump")
 			sound_player.stream = correct_sound
 			sound_player.play()
