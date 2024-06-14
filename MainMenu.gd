@@ -63,8 +63,18 @@ func _on_load_data_button_pressed():
 		
 
 func save_game(to_encode):
-	var data = "*****JERRY*2*****67***6543*45100100100100**4534***457"
+	var data = Global.player_name.lpad(10, "*") + str(Global.level).lpad(2, "*") + str(Global.xp).lpad(7, "*") + str(Global.bank).lpad(7, "*") + str(Global.player_health).lpad(3, "*") + str(Global.energy).lpad(3, "*") + str(Global.happiness).lpad(3, "*") + str(Global.food).lpad(3, "*") + str(Global.money).lpad(3, "*") + str(Global.alltime_correct).lpad(6, "*") + str(Global.total_time_played).lpad(6, "*")
+	print(data)
 	Global.player_name = data.substr(0, 10)
+	var enc_string = Global.player_name
+	for ch in data.substr(10, -1):		
+		if ch == "*":
+			enc_string += "*"
+		else:
+			print(String.chr(int(ch)))
+			enc_string += String.chr(int(ch) + 33)
+	print(enc_string)
+		
 	Global.level = data.substr(10, 2)
 	Global.xp = data.substr(12, 7)
 	Global.bank = data.substr(19, 7)
