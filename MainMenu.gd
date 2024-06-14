@@ -23,6 +23,7 @@ func _ready():
 	save_game("4")
 	
 	
+	
 
 @warning_ignore("unused_parameter")
 func _process(delta):
@@ -49,6 +50,7 @@ func _on_load_data_button_pressed():
 		else:
 			load_game(game_code.text)
 			
+			
 		name_label.text = "Name: " + Global.player_name
 		level_label.text = "Level: " + str(Global.level)
 		xp_label.text = "XP: " + str(Global.xp)
@@ -62,6 +64,7 @@ func _on_load_data_button_pressed():
 		time_label.text = "Total Time: " + str(Global.total_time_played)
 		
 
+'''
 func save_game(to_encode):
 	var data = Global.player_name.lpad(10, "*") + str(Global.level).lpad(2, "*") + str(Global.xp).lpad(7, "*") + str(Global.bank).lpad(7, "*") + str(Global.player_health).lpad(3, "*") + str(Global.energy).lpad(3, "*") + str(Global.happiness).lpad(3, "*") + str(Global.food).lpad(3, "*") + str(Global.money).lpad(3, "*") + str(Global.alltime_correct).lpad(6, "*") + str(Global.total_time_played).lpad(6, "*")
 	print(data)
@@ -74,7 +77,11 @@ func save_game(to_encode):
 			print(String.chr(int(ch)))
 			enc_string += String.chr(int(ch) + 33)
 	print(enc_string)
+	print(Global.player_name)
+	for ch in Global.player_name:
+		print(ch.unicode_at(0))
 		
+	
 	Global.level = data.substr(10, 2)
 	Global.xp = data.substr(12, 7)
 	Global.bank = data.substr(19, 7)
@@ -85,6 +92,14 @@ func save_game(to_encode):
 	Global.money = data.substr(38, 3)
 	Global.alltime_correct = data.substr(41, 6)
 	Global.total_time_played = data.substr(47, 6)
+	
+'''
+
+func save_game(to_encode):
+	var data_array = [Global.player_name.lpad(10, "*"), str(Global.level).lpad(2, "*"), str(Global.xp).lpad(7, "*"), str(Global.bank).lpad(7, "*"), str(Global.player_health).lpad(3, "*"), str(Global.energy).lpad(3, "*"), str(Global.happiness).lpad(3, "*"), str(Global.food).lpad(3, "*"), str(Global.money).lpad(3, "*"), str(Global.alltime_correct).lpad(6, "*"), str(Global.total_time_played).lpad(6, "*")]
+	var data = Global.player_name.lpad(10, "*") + str(Global.level).lpad(2, "*") + str(Global.xp).lpad(7, "*") + str(Global.bank).lpad(7, "*") + str(Global.player_health).lpad(3, "*") + str(Global.energy).lpad(3, "*") + str(Global.happiness).lpad(3, "*") + str(Global.food).lpad(3, "*") + str(Global.money).lpad(3, "*") + str(Global.alltime_correct).lpad(6, "*") + str(Global.total_time_played).lpad(6, "*")
+	
+	
 	
 
 func load_game(save_code):
