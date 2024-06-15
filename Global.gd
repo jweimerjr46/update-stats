@@ -1,6 +1,6 @@
 extends Node
 
-var player_name = "Ducky"
+var player_name = "Du"
 var level = 0
 var xp = 0
 var bank = 0
