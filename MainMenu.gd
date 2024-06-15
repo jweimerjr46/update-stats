@@ -83,7 +83,7 @@ func encode_data(to_encode):
 	var name_check = ""
 	for c in Global.player_name:
 		name_check += str(c.unicode_at(0))
-	checksum += (checksum + int(name_check.substr(0, 6)))
+	checksum += int(name_check.substr(0, 6))
 	
 	print(checksum)		
 	print(divide_numbers)
@@ -135,7 +135,7 @@ func decode_data(save_code):
 
 	if checksum != checksum_hex.hex_to_int():
 		print("Invalid save code: checksum does not match")
-		# return
+		return
 
 	# Decode numbers
 	var divide_numbers = []
