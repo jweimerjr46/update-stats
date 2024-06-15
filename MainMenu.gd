@@ -60,42 +60,10 @@ func _on_load_data_button_pressed():
 		money_label.text = "Money: " + str(Global.money)
 		correct_label.text = "Total Correct: " + str(Global.alltime_correct)
 		time_label.text = "Total Time: " + str(Global.total_time_played)
-		
 
-'''
-func encode_data(to_encode):
-	var data = Global.player_name.lpad(10, "*") + str(Global.level).lpad(2, "*") + str(Global.xp).lpad(7, "*") + str(Global.bank).lpad(7, "*") + str(Global.player_health).lpad(3, "*") + str(Global.energy).lpad(3, "*") + str(Global.happiness).lpad(3, "*") + str(Global.food).lpad(3, "*") + str(Global.money).lpad(3, "*") + str(Global.alltime_correct).lpad(6, "*") + str(Global.total_time_played).lpad(6, "*")
-	print(data)
-	Global.player_name = data.substr(0, 10)
-	var enc_string = Global.player_name
-	for ch in data.substr(10, -1):		
-		if ch == "*":
-			enc_string += "*"
-		else:
-			print(String.chr(int(ch)))
-			enc_string += String.chr(int(ch) + 33)
-	print(enc_string)
-	print(Global.player_name)
-	for ch in Global.player_name:
-		print(ch.unicode_at(0))
-		
-	# 53 total
-	Global.level = data.substr(10, 2)
-	Global.xp = data.substr(12, 7)
-	Global.bank = data.substr(19, 7)
-	Global.player_health = data.substr(27, 3)
-	Global.energy = data.substr(29, 3)
-	Global.happiness = data.substr(32, 3)
-	Global.food = data.substr(35, 3)
-	Global.money = data.substr(38, 3)
-	Global.alltime_correct = data.substr(41, 6)
-	Global.total_time_played = data.substr(47, 6)
-	
-'''
 
 func encode_data(to_encode):
 	var data_array = [str(Global.level).lpad(2, "0"), str(Global.xp).lpad(7, "0"), str(Global.bank).lpad(7, "0"), str(Global.player_health).lpad(3, "0"), str(Global.energy).lpad(3, "0"), str(Global.happiness).lpad(3, "0"), str(Global.food).lpad(3, "0"), str(Global.money).lpad(3, "0"), str(Global.alltime_correct).lpad(6, "0"), str(Global.total_time_played).lpad(6, "0")]
-	#var data = Global.player_name.lpad(10, "*") + str(Global.level).lpad(2, "*") + str(Global.xp).lpad(7, "*") + str(Global.bank).lpad(7, "*") + str(Global.player_health).lpad(3, "*") + str(Global.energy).lpad(3, "*") + str(Global.happiness).lpad(3, "*") + str(Global.food).lpad(3, "*") + str(Global.money).lpad(3, "*") + str(Global.alltime_correct).lpad(6, "*") + str(Global.total_time_played).lpad(6, "*")
 	var whole_number = ""
 	for d in data_array:
 		whole_number += d
@@ -127,9 +95,7 @@ func encode_data(to_encode):
 	var save_code = ""
 	for n in numbers_hex:
 		n += "-"
-		save_code += n
-	
-		
+		save_code += n		
 	
 	print(numbers_hex)
 	
@@ -188,10 +154,7 @@ func decode_data(save_code):
 	print("Whole Numbers: " + str(whole_numbers))
 	
 	whole_number = whole_numbers[0].lpad(10, "0") + whole_numbers[1].lpad(10, "0") + whole_numbers[2].lpad(10, "0") + whole_numbers[3].lpad(13, "0")
-		
-
-		
-		
+			
 	print("Whole Number: ", whole_number)
 	
 	Global.player_name = player_name
@@ -205,7 +168,6 @@ func decode_data(save_code):
 	Global.money = int(whole_number.substr(28, 3))
 	Global.alltime_correct = int(whole_number.substr(31, 6))
 	Global.total_time_played = int(whole_number.substr(37, 6))
-
 	
 	print("Decoded data:")
 	print("Player Name: ", Global.player_name)
@@ -222,36 +184,4 @@ func decode_data(save_code):
 
 	
 	
-'''
-func decode_data(save_code):
-	print(save_code)
-	
-	1-10 player_name
-	11-12 level
-	13-19 xp
-	20-26 bank
-	27-29 player_health
-	30-32 energy
-	33-35 happiness
-	36-38 food
-	39-41 money
-	42-47 alltime_correct
-	48-53 total_time_played (in seconds)
-	
-	Pad values with *
-	
-	
-	var data = "*****JERRY*2*****67***6543*45100100100100**4534***457"
-	Global.player_name = data.substr(0, 10)
-	Global.level = data.substr(10, 2)
-	Global.xp = data.substr(12, 7)
-	Global.bank = data.substr(19, 7)
-	Global.player_health = data.substr(27, 3)
-	Global.energy = data.substr(29, 3)
-	Global.happiness = data.substr(32, 3)
-	Global.food = data.substr(35, 3)
-	Global.money = data.substr(38, 3)
-	Global.alltime_correct = data.substr(41, 6)
-	Global.total_time_played = data.substr(47, 6)
-	
-'''
+
