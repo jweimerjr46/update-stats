@@ -55,7 +55,7 @@ theme_override_font_sizes/font_size = 35
 disabled = true
 text = "Start Game"
 
-[node name="Codelabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+[node name="MessageLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 4

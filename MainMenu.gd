@@ -1,7 +1,7 @@
 extends Control
 
 @onready var game_code = $HBoxContainer/VBoxContainer/GameCode
-@onready var code_label = $HBoxContainer/VBoxContainer/Codelabel
+@onready var message_label = $HBoxContainer/VBoxContainer/MessageLabel
 @onready var start_button = $HBoxContainer/VBoxContainer/StartButton
 @onready var load_button = $HBoxContainer/VBoxContainer/LoadDataButton
 @onready var name_label = $HBoxContainer/MarginContainer/VBoxContainer2/NameLabel
@@ -15,6 +15,8 @@ extends Control
 @onready var money_label = $HBoxContainer/MarginContainer/VBoxContainer2/MoneyLabel
 @onready var correct_label = $HBoxContainer/MarginContainer/VBoxContainer2/CorrectLabel
 @onready var time_label = $HBoxContainer/MarginContainer/VBoxContainer2/TimeLabel
+
+var valid_save_code = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
@@ -33,7 +35,7 @@ func _process(delta):
 	
 func get_input_text():
 	#print(game_code.text)
-	code_label.text = game_code.text
+	message_label.text = game_code.text
 
 
 func _on_start_button_pressed():	
@@ -47,6 +49,8 @@ func _on_load_data_button_pressed():
 			Global.player_name = game_code.text
 		else:
 			decode_data(game_code.text)
+			if valid_save_code == false:
+				start_button.disabled = true
 			
 			
 		name_label.text = "Name: " + Global.player_name
@@ -135,6 +139,7 @@ func decode_data(save_code):
 
 	if checksum != checksum_hex.hex_to_int():
 		print("Invalid save code: checksum does not match")
+		valid_save_code = false
 		return
 
 	# Decode numbers
@@ -169,6 +174,8 @@ func decode_data(save_code):
 	Global.alltime_correct = int(whole_number.substr(31, 6))
 	Global.total_time_played = int(whole_number.substr(37, 6))
 	
+	valid_save_code = true
+	
 	print("Decoded data:")
 	print("Player Name: ", Global.player_name)
 	print("Level: ", Global.level)
@@ -181,7 +188,3 @@ func decode_data(save_code):
 	print("Money: ", Global.money)
 	print("Alltime Correct: ", Global.alltime_correct)
 	print("Total Time Played: ", Global.total_time_played)
-
-	
-	
-
