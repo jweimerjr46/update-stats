@@ -43,7 +43,7 @@ var energy_bar
 var happiness_bar
 var xp_progress_bar
 
-@onready var message_window = $Window
+@onready var message_window = $WarningWindow
 @onready var message_label = $Window/VBoxContainer/MessageLabel
 
 var questions = []
