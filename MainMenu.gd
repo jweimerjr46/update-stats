@@ -26,9 +26,7 @@ func _ready():
 	
 
 @warning_ignore("unused_parameter")
-func _process(delta):
-	if Input.is_action_just_pressed("get_input"):
-		get_input_text()
+func _process(delta):	
 	if Input.is_action_just_pressed("load_data"):
 		load_button.emit_signal("pressed")
 	
@@ -47,23 +45,19 @@ func _on_load_data_button_pressed():
 		start_button.disabled = false
 		if len(game_code.text) < 10:
 			Global.player_name = game_code.text
+			set_labels()
 		else:
 			decode_data(game_code.text)
 			if valid_save_code == false:
 				start_button.disabled = true
+				message_label.text = "Invalid Save Code!"
+				reset_labels()
+			else:
+				set_labels()
+				message_label.text = "Press start to begin!"
 			
 			
-		name_label.text = "Name: " + Global.player_name
-		level_label.text = "Level: " + str(Global.level)
-		xp_label.text = "XP: " + str(Global.xp)
-		bank_label.text = "Bank: " + str(Global.bank)
-		health_label.text = "Health: " + str(Global.player_health)
-		energy_label.text = "Energy: " + str(Global.energy)
-		happiness_label.text = "Happiness: " + str(Global.happiness)
-		food_label.text = "Food: " + str(Global.food)
-		money_label.text = "Money: " + str(Global.money)
-		correct_label.text = "Total Correct: " + str(Global.alltime_correct)
-		time_label.text = "Total Time: " + str(Global.total_time_played)
+		
 
 
 func encode_data(to_encode):
@@ -188,3 +182,29 @@ func decode_data(save_code):
 	print("Money: ", Global.money)
 	print("Alltime Correct: ", Global.alltime_correct)
 	print("Total Time Played: ", Global.total_time_played)
+	
+func reset_labels():
+	name_label.text = "Name: "
+	level_label.text = "Level: "
+	xp_label.text = "XP: "
+	bank_label.text = "Bank: "
+	health_label.text = "Health: "
+	energy_label.text = "Energy: "
+	happiness_label.text = "Happiness: "
+	food_label.text = "Food: "
+	money_label.text = "Money: "
+	correct_label.text = "Total Correct: "
+	time_label.text = "Total Time: "
+	
+func set_labels():
+	name_label.text = "Name: " + Global.player_name
+	level_label.text = "Level: " + str(Global.level)
+	xp_label.text = "XP: " + str(Global.xp)
+	bank_label.text = "Bank: " + str(Global.bank)
+	health_label.text = "Health: " + str(Global.player_health)
+	energy_label.text = "Energy: " + str(Global.energy)
+	happiness_label.text = "Happiness: " + str(Global.happiness)
+	food_label.text = "Food: " + str(Global.food)
+	money_label.text = "Money: " + str(Global.money)
+	correct_label.text = "Total Correct: " + str(Global.alltime_correct)
+	time_label.text = "Total Time: " + str(Global.total_time_played)
