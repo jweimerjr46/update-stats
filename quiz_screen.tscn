@@ -498,7 +498,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MessageLabel" type="Label" parent="WarningWindow/VBoxContainer"]
+[node name="WarningLabel" type="Label" parent="WarningWindow/VBoxContainer"]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4

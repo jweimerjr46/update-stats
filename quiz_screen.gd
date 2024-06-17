@@ -43,8 +43,8 @@ var energy_bar
 var happiness_bar
 var xp_progress_bar
 
-@onready var message_window = $WarningWindow
-@onready var message_label = $Window/VBoxContainer/MessageLabel
+@onready var warning_window = $WarningWindow
+@onready var warning_label = $WarningWindow/VBoxContainer/WarningLabel
 
 var questions = []
 var original_questions = []
@@ -191,10 +191,10 @@ func _process(delta):
 		player_health = clamp(player_health, 0, 102)
 		if player_health == 0:
 			timer_started = false
-			message_label.text = "YOU LOST ALL YOUR HEALTH!
+			warning_label.text = "YOU LOST ALL YOUR HEALTH!
 
 You will go back to beginning of the current level, lose half of your food, and half of your coins."
-			message_window.show()
+			warning_window.show()
 			if level == 0:
 				xp = 0
 			else:
@@ -205,12 +205,11 @@ You will go back to beginning of the current level, lose half of your food, and 
 			food = floor(food / 2.0)
 			food_label.text = "Food: " + str(food)
 			money = floor(money / 2.0)
-			money_label.text = "Food: " + str(money)
+			money_label.text = "Money: " + str(money)
 		health_bar.value = player_health
 		player_energy -= delta * energy_reduction_rate
 		energy_bar.value = player_energy
-		time_elapsed += delta
-		#timer_label.text = "Time: " + str(time_elapsed).pad_decimals(1)
+		time_elapsed += delta		
 		update_time_label(time_elapsed)
 
 	if Input.is_action_just_pressed("reset_game"):
@@ -375,7 +374,7 @@ func update_money():
 
 
 func _on_button_pressed():
-	message_window.hide()
+	warning_window.hide()
 	timer_started = true
 	
 	
