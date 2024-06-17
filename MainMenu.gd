@@ -53,7 +53,7 @@ func _on_load_data_button_pressed():
 
 
 func encode_data(to_encode):
-	var data_array = [str(Global.level).lpad(2, "0"), str(Global.xp).lpad(7, "0"), str(Global.bank).lpad(7, "0"), str(Global.player_health).lpad(3, "0"), str(Global.energy).lpad(3, "0"), str(Global.happiness).lpad(3, "0"), str(Global.food).lpad(3, "0"), str(Global.money).lpad(3, "0"), str(Global.alltime_correct).lpad(6, "0"), str(Global.total_time_played).lpad(6, "0")]
+	var data_array = [str(Global.level).lpad(2, "0"), str(int(Global.xp)).lpad(7, "0"), str(Global.bank).lpad(7, "0"), str(Global.player_health).lpad(3, "0"), str(Global.energy).lpad(3, "0"), str(Global.happiness).lpad(3, "0"), str(Global.food).lpad(3, "0"), str(Global.money).lpad(3, "0"), str(Global.alltime_correct).lpad(6, "0"), str(Global.total_time_played).lpad(6, "0")]
 	var whole_number = ""
 	for d in data_array:
 		whole_number += d
@@ -187,4 +187,11 @@ func set_labels():
 	food_label.text = "Food: " + str(Global.food)
 	money_label.text = "Money: " + str(Global.money)
 	correct_label.text = "Total Correct: " + str(Global.alltime_correct)
-	time_label.text = "Total Time: " + str(Global.total_time_played)
+	update_time_label(Global.total_time_played)
+
+
+func update_time_label(time):
+	var hours = floor(time / 3600)
+	var minutes = floor(int(time/60) % 60)	
+	var seconds = int(time) % 60
+	time_label.text = "Time: %02d:%02d:%02d" % [hours, minutes, seconds]
