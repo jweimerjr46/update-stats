@@ -45,6 +45,8 @@ var xp_progress_bar
 
 @onready var warning_window = $WarningWindow
 @onready var warning_label = $WarningWindow/VBoxContainer/WarningLabel
+@onready var exit_window = $ExitWindow
+@onready var save_code_to_copy = $ExitWindow/VBoxContainer/SaveCode
 
 var questions = []
 var original_questions = []
@@ -62,6 +64,7 @@ var correct_sound = preload("res://assets/up.wav")
 var incorrect_sound = preload("res://assets/down.wav")
 
 # Player Stats
+
 var player_health = Global.player_health
 var player_happiness = Global.happiness
 var player_energy = Global.energy
@@ -311,13 +314,7 @@ func button_pressed(button):
 					var to_sell = food - 100
 					money += price_sell_food * to_sell
 					update_money()
-				food = 100				
-			#print("Run: " + str(correct_run))
-			#print(food)
-			# print(progress.value)
-			#if progress.value >= 100:     # Game is over
-				#timer_started = false
-				#get_tree().change_scene_to_file("res://game_over_screen.tscn")
+				food = 100
 			correct_label.text = "Correct: " + str(questions_correct)
 			get_next_question()
 		else:
@@ -397,5 +394,60 @@ func update_time_label(time):
 	var minutes = floor(int(time/60) % 60)	
 	var seconds = int(time) % 60
 	timer_label.text = "Time: %02d:%02d:%02d" % [hours, minutes, seconds]
+
+
+func encode_data():
+	var data_array = [str(Global.level).lpad(2, "0"), str(Global.xp).lpad(7, "0"), str(Global.bank).lpad(7, "0"), str(Global.player_health).lpad(3, "0"), str(Global.energy).lpad(3, "0"), str(Global.happiness).lpad(3, "0"), str(Global.food).lpad(3, "0"), str(Global.money).lpad(3, "0"), str(Global.alltime_correct).lpad(6, "0"), str(Global.total_time_played).lpad(6, "0")]
+	var whole_number = ""
+	for d in data_array:
+		whole_number += d
+	print(whole_number)
+		
+	var whole_number_array = [whole_number.substr(0, 10) + "5", whole_number.substr(10, 10) + "5", whole_number.substr(20, 10) + "5", whole_number.substr(30) + "5"]
+	var divide_numbers = []
+	for n in whole_number_array:
+		print(n + " length: " + str(len(n)))
+		divide_numbers.append(int(n)/5)
+	var checksum = 0
+	for n in divide_numbers:
+		var n_str = str(n)
+		for c in n_str:
+			checksum += int(c)
 	
-	#timer_label.text = "Time: " + "%02d:%02d" % [floor(time_elapsed / 60), int(time_elapsed) % 60]
+	var name_check = ""
+	for c in Global.player_name:
+		name_check += str(c.unicode_at(0))
+	checksum += int(name_check.substr(0, 6))
+	
+	print(checksum)		
+	print(divide_numbers)
+	var numbers_hex = []
+	for n in divide_numbers:
+		numbers_hex.append("%X" % n)
+	numbers_hex.append("%X" % checksum)
+	
+	var save_code = ""
+	for n in numbers_hex:
+		n += "-"
+		save_code += n		
+	
+	print(numbers_hex)
+	
+	save_code = Global.player_name + "-" + save_code.substr(0, len(save_code) - 1)
+	
+	print(save_code)
+	return save_code
+
+
+func _on_cancel_button_pressed():
+	exit_window.hide()
+
+
+func _on_leave_button_pressed():
+	get_tree().quit()
+
+
+func _on_exit_button_pressed():
+	exit_window.show()
+	save_code_to_copy.text = encode_data()
+	

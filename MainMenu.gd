@@ -31,19 +31,14 @@ func _process(delta):
 		load_button.emit_signal("pressed")
 	
 	
-func get_input_text():
-	#print(game_code.text)
-	message_label.text = game_code.text
-
-
-func _on_start_button_pressed():	
+func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://quiz_screen.tscn")
 
 
 func _on_load_data_button_pressed():
 	if game_code.text:
 		start_button.disabled = false
-		if len(game_code.text) < 10:
+		if len(game_code.text) <= 10:
 			Global.player_name = game_code.text
 			set_labels()
 		else:
@@ -55,9 +50,6 @@ func _on_load_data_button_pressed():
 			else:
 				set_labels()
 				message_label.text = "Press start to begin!"
-			
-			
-		
 
 
 func encode_data(to_encode):
@@ -170,18 +162,6 @@ func decode_data(save_code):
 	
 	valid_save_code = true
 	
-	print("Decoded data:")
-	print("Player Name: ", Global.player_name)
-	print("Level: ", Global.level)
-	print("XP: ", Global.xp)
-	print("Bank: ", Global.bank)
-	print("Player Health: ", Global.player_health)
-	print("Energy: ", Global.energy)
-	print("Happiness: ", Global.happiness)
-	print("Food: ", Global.food)
-	print("Money: ", Global.money)
-	print("Alltime Correct: ", Global.alltime_correct)
-	print("Total Time Played: ", Global.total_time_played)
 	
 func reset_labels():
 	name_label.text = "Name: "
