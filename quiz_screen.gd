@@ -64,7 +64,6 @@ var correct_sound = preload("res://assets/up.wav")
 var incorrect_sound = preload("res://assets/down.wav")
 
 # Player Stats
-
 var player_health = Global.player_health
 var player_happiness = Global.happiness
 var player_energy = Global.energy
@@ -143,7 +142,7 @@ func _ready():
 	xp_progress_bar = $HBoxContainer/VBoxContainer3/NextLevelProgressBar
 	health_bar.value = player_health
 	energy_bar.value = player_energy
-	happiness_bar.value = correct_percentage * 5
+	happiness_bar.value = player_happiness
 	
 	coin_timer.connect("timeout", add_money)
 	coin_timer.start()
@@ -334,7 +333,9 @@ func button_pressed(button):
 			get_next_question()
 			times_wrong = 0
 	
-	happiness_bar.value = correct_percentage * 5
+	player_happiness = correct_percentage * 5
+	happiness_bar.value = player_happiness
+	
 	food_label.text = "Food: " + str(food)
 
 
@@ -368,12 +369,6 @@ func update_money():
 	money_label.text = "Money: " + str(money)
 	bank_label.text = "Bank: " + str(bank)
 	
-
-
-func _on_button_pressed():
-	warning_window.hide()
-	timer_started = true
-	
 	
 # Function to disable a button and change its appearance
 func disable_button(button: Button):
@@ -397,7 +392,7 @@ func update_time_label(time):
 
 
 func encode_data():
-	var data_array = [str(Global.level).lpad(2, "0"), str(Global.xp).lpad(7, "0"), str(Global.bank).lpad(7, "0"), str(Global.player_health).lpad(3, "0"), str(Global.energy).lpad(3, "0"), str(Global.happiness).lpad(3, "0"), str(Global.food).lpad(3, "0"), str(Global.money).lpad(3, "0"), str(Global.alltime_correct).lpad(6, "0"), str(Global.total_time_played).lpad(6, "0")]
+	var data_array = [str(level).lpad(2, "0"), str(xp).lpad(7, "0"), str(int(bank)).lpad(7, "0"), str(int(player_health)).lpad(3, "0"), str(int(player_energy)).lpad(3, "0"), str(int(player_happiness)).lpad(3, "0"), str(int(food)).lpad(3, "0"), str(int(money)).lpad(3, "0"), str(int(alltime_correct)).lpad(6, "0"), str(int(total_time_played + time_elapsed)).lpad(6, "0")]
 	var whole_number = ""
 	for d in data_array:
 		whole_number += d
@@ -415,7 +410,7 @@ func encode_data():
 			checksum += int(c)
 	
 	var name_check = ""
-	for c in Global.player_name:
+	for c in player_name:
 		name_check += str(c.unicode_at(0))
 	checksum += int(name_check.substr(0, 6))
 	
@@ -441,6 +436,7 @@ func encode_data():
 
 func _on_cancel_button_pressed():
 	exit_window.hide()
+	timer_started = true
 
 
 func _on_leave_button_pressed():
@@ -450,4 +446,9 @@ func _on_leave_button_pressed():
 func _on_exit_button_pressed():
 	exit_window.show()
 	save_code_to_copy.text = encode_data()
-	
+	timer_started = false
+
+
+func _on_message_close_button_pressed():	
+	warning_window.hide()
+	timer_started = true
