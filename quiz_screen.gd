@@ -211,7 +211,7 @@ You will go back to beginning of the current level, lose half of your food, and 
 		energy_bar.value = player_energy
 		time_elapsed += delta
 		#timer_label.text = "Time: " + str(time_elapsed).pad_decimals(1)
-		timer_label.text = "Time: " + "%02d:%02d" % [floor(time_elapsed / 60), int(time_elapsed) % 60]
+		update_time_label(time_elapsed)
 
 	if Input.is_action_just_pressed("reset_game"):
 		reset_game()
@@ -392,3 +392,11 @@ func disable_button(button: Button):
 
 	# Disable the button
 	button.disabled = true
+	
+func update_time_label(time):
+	var hours = floor(time / 3600)
+	var minutes = floor(int(time/60) % 60)	
+	var seconds = int(time) % 60
+	timer_label.text = "Time: %02d:%02d:%02d" % [hours, minutes, seconds]
+	
+	#timer_label.text = "Time: " + "%02d:%02d" % [floor(time_elapsed / 60), int(time_elapsed) % 60]
