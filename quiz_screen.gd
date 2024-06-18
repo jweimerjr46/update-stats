@@ -245,6 +245,8 @@ You will go back to beginning of the current level, lose half of your food, and 
 		money += price_sell_food
 		update_money()
 		food_label.text = "Food: " + str(food)
+	elif Input.is_action_just_pressed("show code"):
+		$HBoxContainer/VBoxContainer3/ExitButton.emit_signal("pressed")
 
 
 func get_next_question():	
