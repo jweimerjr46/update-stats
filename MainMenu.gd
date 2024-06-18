@@ -1,29 +1,27 @@
 extends Control
 
-@onready var game_code = $HBoxContainer/VBoxContainer/GameCode
-@onready var message_label = $HBoxContainer/VBoxContainer/MessageLabel
-@onready var start_button = $HBoxContainer/VBoxContainer/StartButton
+@onready var game_code = $HBoxContainer/VBoxContainer/GameCodeOriginal
+@onready var message_label = $HBoxContainer/VBoxContainer/OriginalMessageLabel
 @onready var load_button = $HBoxContainer/VBoxContainer/LoadDataButton
-@onready var name_label = $HBoxContainer/MarginContainer/VBoxContainer2/NameLabel
-@onready var level_label = $HBoxContainer/MarginContainer/VBoxContainer2/LevelLabel
-@onready var xp_label = $HBoxContainer/MarginContainer/VBoxContainer2/XPLabel
-@onready var bank_label = $HBoxContainer/MarginContainer/VBoxContainer2/BankLabel
-@onready var health_label = $HBoxContainer/MarginContainer/VBoxContainer2/HealthLabel
-@onready var energy_label = $HBoxContainer/MarginContainer/VBoxContainer2/EnergyLabel
-@onready var happiness_label = $HBoxContainer/MarginContainer/VBoxContainer2/HappinessLabel
-@onready var food_label = $HBoxContainer/MarginContainer/VBoxContainer2/FoodLabel
-@onready var money_label = $HBoxContainer/MarginContainer/VBoxContainer2/MoneyLabel
-@onready var correct_label = $HBoxContainer/MarginContainer/VBoxContainer2/CorrectLabel
-@onready var time_label = $HBoxContainer/MarginContainer/VBoxContainer2/TimeLabel
+@onready var name_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/NameLabelBefore
+@onready var level_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/LevelLabelBefore
+@onready var xp_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/XPLabelBefore
+@onready var bank_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/BankLabelBefore
+@onready var health_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/HealthLabelBefore
+@onready var energy_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/EnergyLabelBefore
+@onready var happiness_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/HappinessLabelBefore
+@onready var food_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/FoodLabelBefore
+@onready var money_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/MoneyLabelBefore
+@onready var correct_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/CorrectLabelBefore
+@onready var time_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/TimeLabelBefore
 
 var valid_save_code = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	game_code.grab_focus()
-	start_button.disabled = true
+	game_code.grab_focus()	
 	encode_data("4")	
-	
+
 
 @warning_ignore("unused_parameter")
 func _process(delta):	
@@ -31,25 +29,19 @@ func _process(delta):
 		load_button.emit_signal("pressed")
 	
 	
-func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://quiz_screen.tscn")
-
-
 func _on_load_data_button_pressed():
-	if game_code.text:
-		start_button.disabled = false
+	if game_code.text:		
 		if len(game_code.text) <= 10:
 			Global.player_name = game_code.text
 			set_labels()
 		else:
 			decode_data(game_code.text)
 			if valid_save_code == false:
-				start_button.disabled = true
 				message_label.text = "Invalid Save Code!"
 				reset_labels()
 			else:
 				set_labels()
-				message_label.text = "Press start to begin!"
+				message_label.text = "Data Loaded"
 
 
 func encode_data(to_encode):

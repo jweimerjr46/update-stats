@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Quiz Game"
+config/name="Quiz Game Update Stats"
 config/version="1.7.0"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")

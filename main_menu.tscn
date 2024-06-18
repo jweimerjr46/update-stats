@@ -25,11 +25,109 @@ offset_bottom = 117.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 0
+
+[node name="VBoxContainerBefore" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="NameLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Name: "
+vertical_alignment = 1
+
+[node name="LevelLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Level: 
+"
+vertical_alignment = 1
+
+[node name="XPLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "XP: 
+"
+vertical_alignment = 1
+
+[node name="BankLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Bank: "
+vertical_alignment = 1
+
+[node name="HealthLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Health: "
+vertical_alignment = 1
+
+[node name="EnergyLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Energy: "
+vertical_alignment = 1
+
+[node name="HappinessLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Happiness: "
+vertical_alignment = 1
+
+[node name="FoodLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Food: "
+vertical_alignment = 1
+
+[node name="MoneyLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Money: "
+vertical_alignment = 1
+
+[node name="CorrectLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Total Correct: "
+vertical_alignment = 1
+
+[node name="TimeLabelBefore" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainerBefore"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Total Time: "
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 
-[node name="GameCode" type="LineEdit" parent="HBoxContainer/VBoxContainer"]
+[node name="OriginalMessageLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Original Save Code
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GameCodeOriginal" type="LineEdit" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(800, 75)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -47,40 +145,45 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 35
 text = "Load Data"
 
-[node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 75)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 35
-disabled = true
-text = "Start Game"
-
-[node name="MessageLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+[node name="UpdatedMessageLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
-text = "Enter your save code! If this is your first time, enter your name."
+text = "Updated Save Code
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+[node name="GameCodeNew" type="LineEdit" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Enter Code"
+alignment = 1
+max_length = 50
+editable = false
+clear_button_enabled = true
+caret_blink = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 33
 theme_override_constants/margin_top = 0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+[node name="VBoxContainerAfter" type="VBoxContainer" parent="HBoxContainer/MarginContainer2"]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="NameLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Name: "
 vertical_alignment = 1
 
-[node name="LevelLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="LevelLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
@@ -88,7 +191,7 @@ text = "Level:
 "
 vertical_alignment = 1
 
-[node name="XPLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="XPLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
@@ -96,56 +199,56 @@ text = "XP:
 "
 vertical_alignment = 1
 
-[node name="BankLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="BankLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Bank: "
 vertical_alignment = 1
 
-[node name="HealthLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="HealthLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Health: "
 vertical_alignment = 1
 
-[node name="EnergyLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="EnergyLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Energy: "
 vertical_alignment = 1
 
-[node name="HappinessLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="HappinessLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Happiness: "
 vertical_alignment = 1
 
-[node name="FoodLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="FoodLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Food: "
 vertical_alignment = 1
 
-[node name="MoneyLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="MoneyLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Money: "
 vertical_alignment = 1
 
-[node name="CorrectLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="CorrectLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Total Correct: "
 vertical_alignment = 1
 
-[node name="TimeLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="TimeLabelAfter" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
@@ -153,4 +256,3 @@ text = "Total Time: "
 vertical_alignment = 1
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/LoadDataButton" to="." method="_on_load_data_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
