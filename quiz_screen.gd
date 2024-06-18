@@ -452,6 +452,7 @@ func _on_leave_button_pressed():
 func _on_exit_button_pressed():
 	exit_window.show()
 	save_code_to_copy.text = encode_data()
+	DisplayServer.clipboard_set(save_code_to_copy.text)
 	timer_started = false
 
 
