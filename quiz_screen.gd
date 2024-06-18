@@ -102,6 +102,7 @@ func _ready():
 	question_label = $HBoxContainer/MarginContainer/VBoxContainer/QuestionLabel
 	code_label = $HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/CodeLabel
 	xp_label = $HBoxContainer/VBoxContainer3/XPLabel
+	xp_label.text = "XP: " + str(xp)
 	correct_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/CorrectLabel
 	total_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/TotalLabel
 	timer_label = $HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/TimerLabel
@@ -111,6 +112,7 @@ func _ready():
 	$HBoxContainer/VBoxContainer2/NameLabel.text = player_name
 	question_xp_label = $HBoxContainer/MarginContainer/VBoxContainer/QuestionXPLabel
 	level_label = $HBoxContainer/VBoxContainer3/LevelLabel
+	level_label.text = "Level: " + str(Global.level)
 	
 	food_label.text = "Food: " + str(food)
 	money_label.text = "Money: " + str(money)
@@ -140,6 +142,8 @@ func _ready():
 	energy_bar = $HBoxContainer/VBoxContainer2/HBoxContainer2/EnergyBar
 	happiness_bar = $HBoxContainer/VBoxContainer2/HBoxContainer3/HappinessBar
 	xp_progress_bar = $HBoxContainer/VBoxContainer3/NextLevelProgressBar
+	xp_progress_bar.value = xp - level_dictionary[level]
+	xp_progress_bar.max_value = level_dictionary[level + 1]
 	health_bar.value = player_health
 	energy_bar.value = player_energy
 	happiness_bar.value = player_happiness
@@ -414,7 +418,7 @@ func encode_data():
 		name_check += str(c.unicode_at(0))
 	checksum += int(name_check.substr(0, 6))
 	
-	print(checksum)		
+	print(checksum)
 	print(divide_numbers)
 	var numbers_hex = []
 	for n in divide_numbers:

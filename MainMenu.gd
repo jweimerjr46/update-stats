@@ -139,7 +139,7 @@ func decode_data(save_code):
 	var whole_numbers = []
 	
 	for n in divide_numbers:
-		n[-1] = ""		
+		n[-1] = ""
 		whole_numbers.append(n)
 	
 	print("Whole Numbers: " + str(whole_numbers))
