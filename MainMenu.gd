@@ -1,6 +1,6 @@
 extends Control
 
-@onready var game_code = $HBoxContainer/VBoxContainer/GameCodeOriginal
+@onready var game_code = $HBoxContainer/MarginContainer/VBoxContainerBefore/GameCodeOriginal
 @onready var message_label = $HBoxContainer/VBoxContainer/OriginalMessageLabel
 @onready var load_button = $HBoxContainer/VBoxContainer/LoadDataButton
 @onready var name_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/NameLabelBefore
@@ -187,3 +187,7 @@ func update_time_label(time):
 	var minutes = floor(int(time/60) % 60)	
 	var seconds = int(time) % 60
 	time_label.text = "Time: %02d:%02d:%02d" % [hours, minutes, seconds]
+
+
+func _on_copy_new_code_button_pressed():
+	pass # Replace with function body.
