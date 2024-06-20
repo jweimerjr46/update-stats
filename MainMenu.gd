@@ -1,7 +1,7 @@
 extends Control
 
 @onready var game_code = $HBoxContainer/MarginContainer/VBoxContainerBefore/GameCodeOriginal
-@onready var message_label = $HBoxContainer/VBoxContainer/OriginalMessageLabel
+@onready var message_label = $HBoxContainer/VBoxContainer/MessageLabel
 @onready var load_button = $HBoxContainer/VBoxContainer/LoadDataButton
 @onready var name_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/NameLabelBefore
 @onready var level_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/LevelLabelBefore
