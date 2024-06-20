@@ -42,6 +42,7 @@ func _on_load_data_button_pressed():
 			else:
 				set_labels()
 				message_label.text = "Data Loaded"
+				$HBoxContainer/VBoxContainer/CopyNewCodeButton.disabled = false
 
 
 func encode_data(to_encode):
