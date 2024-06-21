@@ -28,12 +28,24 @@ extends Control
 @onready var correct_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/CorrectLabelAfter
 @onready var time_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/TimeLabelAfter
 
+var updated_player_name
+var updated_level
+var updated_xp
+var updated_bank
+var updated_player_health
+var updated_energy
+var updated_happiness
+var updated_food
+var updated_money
+var updated_alltime_correct
+var updated_total_time_played
+
 var valid_save_code = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	game_code.grab_focus()	
-	encode_data("4")	
+		
 
 
 @warning_ignore("unused_parameter")
@@ -51,15 +63,18 @@ func _on_load_data_button_pressed():
 			decode_data(game_code.text)
 			if valid_save_code == false:
 				message_label.text = "Invalid Save Code!"
+				game_code_updated.text = ""
 				reset_labels()
 			else:
 				set_labels()
+				set_updated_labels()
 				message_label.text = "Data Loaded"
+				game_code_updated.text = encode_data()
 				$HBoxContainer/VBoxContainer/CopyNewCodeButton.disabled = false
 
 
-func encode_data(to_encode):
-	var data_array = [str(Global.level).lpad(2, "0"), str(int(Global.xp)).lpad(7, "0"), str(Global.bank).lpad(7, "0"), str(Global.player_health).lpad(3, "0"), str(Global.energy).lpad(3, "0"), str(Global.happiness).lpad(3, "0"), str(Global.food).lpad(3, "0"), str(Global.money).lpad(3, "0"), str(Global.alltime_correct).lpad(6, "0"), str(Global.total_time_played).lpad(6, "0")]
+func encode_data():
+	var data_array = [str(updated_level).lpad(2, "0"), str(int(updated_xp)).lpad(7, "0"), str(updated_bank).lpad(7, "0"), str(updated_player_health).lpad(3, "0"), str(updated_energy).lpad(3, "0"), str(updated_happiness).lpad(3, "0"), str(updated_food).lpad(3, "0"), str(updated_money).lpad(3, "0"), str(updated_alltime_correct).lpad(6, "0"), str(updated_total_time_played).lpad(6, "0")]
 	var whole_number = ""
 	for d in data_array:
 		whole_number += d
@@ -77,7 +92,7 @@ func encode_data(to_encode):
 			checksum += int(c)
 	
 	var name_check = ""
-	for c in Global.player_name:
+	for c in updated_player_name:
 		name_check += str(c.unicode_at(0))
 	checksum += int(name_check.substr(0, 6))
 	
@@ -95,7 +110,7 @@ func encode_data(to_encode):
 	
 	print(numbers_hex)
 	
-	save_code = Global.player_name + "-" + save_code.substr(0, len(save_code) - 1)
+	save_code = updated_player_name + "-" + save_code.substr(0, len(save_code) - 1)
 	
 	print(save_code)
 	return save_code
@@ -166,6 +181,20 @@ func decode_data(save_code):
 	Global.alltime_correct = int(whole_number.substr(31, 6))
 	Global.total_time_played = int(whole_number.substr(37, 6))
 	
+	updated_player_name = player_name
+	updated_level = int(whole_number.substr(0, 2))
+	updated_xp = int(whole_number.substr(2, 7))
+	updated_bank = int(whole_number.substr(9, 7))
+	updated_player_health = int(whole_number.substr(16, 3))
+	updated_energy = int(whole_number.substr(19, 3))
+	updated_happiness = int(whole_number.substr(22, 3))
+	updated_food = int(whole_number.substr(25, 3))
+	updated_money = int(whole_number.substr(28, 3))
+	updated_alltime_correct = int(whole_number.substr(31, 6))
+	updated_total_time_played = int(whole_number.substr(37, 6))
+	
+	
+	
 	valid_save_code = true
 	
 	
@@ -182,6 +211,18 @@ func reset_labels():
 	correct_label.text = "Total Correct: "
 	time_label.text = "Total Time: "
 	
+	name_label_updated.text = "Name: "
+	level_label_updated.text = "Level: "
+	xp_label_updated.text = "XP: "
+	bank_label_updated.text = "Bank: "
+	health_label_updated.text = "Health: "
+	energy_label_updated.text = "Energy: "
+	happiness_label_updated.text = "Happiness: "
+	food_label_updated.text = "Food: "
+	money_label_updated.text = "Money: "
+	correct_label_updated.text = "Total Correct: "
+	time_label_updated.text = "Total Time: "
+	
 func set_labels():
 	name_label.text = "Name: " + Global.player_name
 	level_label.text = "Level: " + str(Global.level)
@@ -194,6 +235,19 @@ func set_labels():
 	money_label.text = "Money: " + str(Global.money)
 	correct_label.text = "Total Correct: " + str(Global.alltime_correct)
 	update_time_label(Global.total_time_played)
+	
+func set_updated_labels():
+	name_label_updated.text = "Name: " + Global.player_name
+	level_label_updated.text = "Level: " + str(Global.level)
+	xp_label_updated.text = "XP: " + str(Global.xp)
+	bank_label_updated.text = "Bank: " + str(Global.bank)
+	health_label_updated.text = "Health: " + str(Global.player_health)
+	energy_label_updated.text = "Energy: " + str(Global.energy)
+	happiness_label_updated.text = "Happiness: " + str(Global.happiness)
+	food_label_updated.text = "Food: " + str(Global.food)
+	money_label_updated.text = "Money: " + str(Global.money)
+	correct_label_updated.text = "Total Correct: " + str(Global.alltime_correct)
+	update_time_label(Global.total_time_played)
 
 
 func update_time_label(time):
@@ -201,6 +255,7 @@ func update_time_label(time):
 	var minutes = floor(int(time/60) % 60)	
 	var seconds = int(time) % 60
 	time_label.text = "Time: %02d:%02d:%02d" % [hours, minutes, seconds]
+	time_label_updated.text = "Time: %02d:%02d:%02d" % [hours, minutes, seconds]
 
 
 func _on_copy_new_code_button_pressed():
