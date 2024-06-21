@@ -15,6 +15,19 @@ extends Control
 @onready var correct_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/CorrectLabelBefore
 @onready var time_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/TimeLabelBefore
 
+@onready var game_code_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew
+@onready var name_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/NameLabelAfter
+@onready var level_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/LevelLabelAfter
+@onready var xp_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/XPLabelAfter
+@onready var bank_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/BankLabelAfter
+@onready var health_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HealthLabelAfter
+@onready var energy_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/EnergyLabelAfter
+@onready var happiness_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HappinessLabelAfter
+@onready var food_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/FoodLabelAfter
+@onready var money_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/MoneyLabelAfter
+@onready var correct_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/CorrectLabelAfter
+@onready var time_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/TimeLabelAfter
+
 var valid_save_code = false
 
 # Called when the node enters the scene tree for the first time.
@@ -192,5 +205,5 @@ func update_time_label(time):
 
 func _on_copy_new_code_button_pressed():
 	#$HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text = encode_data()
-	$HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text = "hello"
+	#$HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text = "hello"
 	DisplayServer.clipboard_set($HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text)
