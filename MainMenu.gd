@@ -16,17 +16,17 @@ extends Control
 @onready var time_label = $HBoxContainer/MarginContainer/VBoxContainerBefore/TimeLabelBefore
 
 @onready var game_code_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew
-@onready var name_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/NameLabelAfter
-@onready var level_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/LevelLabelAfter
-@onready var xp_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/XPLabelAfter
-@onready var bank_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/BankLabelAfter
-@onready var health_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HealthLabelAfter
-@onready var energy_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/EnergyLabelAfter
-@onready var happiness_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HappinessLabelAfter
-@onready var food_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/FoodLabelAfter
-@onready var money_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/MoneyLabelAfter
-@onready var correct_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/CorrectLabelAfter
-@onready var time_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/TimeLabelAfter
+@onready var name_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/NameLabelAfter
+@onready var level_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/LevelLabelAfter
+@onready var xp_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/XPLabelAfter
+@onready var bank_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/BankLabelAfter
+@onready var health_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/HealthLabelAfter
+@onready var energy_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/EnergyLabelAfter
+@onready var happiness_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/HappinessLabelAfter
+@onready var food_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/FoodLabelAfter
+@onready var money_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/MoneyLabelAfter
+@onready var correct_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/CorrectLabelAfter
+@onready var time_label_updated = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer/TimeLabelAfter
 
 var updated_player_name
 var updated_level
