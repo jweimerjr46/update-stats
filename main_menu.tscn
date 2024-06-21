@@ -283,177 +283,98 @@ vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 4
 
 [node name="HBoxContainer11" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="LineEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer11"]
-custom_minimum_size = Vector2(200, 57)
+[node name="EnterNewName" type="LineEdit" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer11"]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 placeholder_text = "New Name"
 alignment = 1
 
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer11"]
+[node name="ChangeNameButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer11"]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "+"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
-visible = false
-custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
 size_flags_vertical = 4
-
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
-
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "+"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 0
 
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="EnterLevelAmount" type="LineEdit" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(156, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Amount"
+alignment = 1
+
+[node name="AddLevelButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
-
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "+"
+
+[node name="SubtractLevelButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+text = "-"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3"]
-custom_minimum_size = Vector2(40, 0)
+[node name="EnterXPAmount" type="LineEdit" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(156, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Amount"
+alignment = 1
 
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+[node name="AddXPButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "+"
+
+[node name="SubtractXPButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "-"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4"]
-custom_minimum_size = Vector2(40, 0)
+[node name="EnterBankAmount" type="LineEdit" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(156, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Amount"
+alignment = 1
 
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+[node name="AddBankButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "+"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer5"]
+[node name="SubtractBankButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "-"
-
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer5"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "+"
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer6"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
-
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer6"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "+"
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer7"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
-
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer7"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "+"
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer8"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
-
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer8"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "+"
-
-[node name="HBoxContainer9" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer9"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
-
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer9"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "+"
-
-[node name="HBoxContainer10" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-
-[node name="SubtractButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer10"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "-"
-
-[node name="AddButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer10"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "+"
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(400, 100)
