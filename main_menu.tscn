@@ -27,8 +27,9 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 33
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
 
 [node name="VBoxContainerBefore" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -135,11 +136,11 @@ text = "Total Time: "
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(300, 400)
 layout_mode = 2
 
 [node name="MessageLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(350, 75)
+custom_minimum_size = Vector2(300, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
@@ -167,8 +168,7 @@ text = "Copy
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 33
-theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
 
 [node name="VBoxContainerAfter" type="VBoxContainer" parent="HBoxContainer/MarginContainer2"]
 layout_mode = 2

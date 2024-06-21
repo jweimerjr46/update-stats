@@ -261,4 +261,4 @@ func update_time_label(time):
 func _on_copy_new_code_button_pressed():
 	#$HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text = encode_data()
 	#$HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text = "hello"
-	DisplayServer.clipboard_set($HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text)
+	DisplayServer.clipboard_set(game_code_updated.text)
