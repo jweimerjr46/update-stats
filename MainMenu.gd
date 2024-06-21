@@ -237,17 +237,17 @@ func set_labels():
 	update_time_label(Global.total_time_played)
 	
 func set_updated_labels():
-	name_label_updated.text = "Name: " + Global.player_name
-	level_label_updated.text = "Level: " + str(Global.level)
-	xp_label_updated.text = "XP: " + str(Global.xp)
-	bank_label_updated.text = "Bank: " + str(Global.bank)
-	health_label_updated.text = "Health: " + str(Global.player_health)
-	energy_label_updated.text = "Energy: " + str(Global.energy)
-	happiness_label_updated.text = "Happiness: " + str(Global.happiness)
-	food_label_updated.text = "Food: " + str(Global.food)
-	money_label_updated.text = "Money: " + str(Global.money)
-	correct_label_updated.text = "Total Correct: " + str(Global.alltime_correct)
-	update_time_label(Global.total_time_played)
+	name_label_updated.text = "Name: " + updated_player_name
+	level_label_updated.text = "Level: " + str(updated_level)
+	xp_label_updated.text = "XP: " + str(updated_xp)
+	bank_label_updated.text = "Bank: " + str(updated_bank)
+	health_label_updated.text = "Health: " + str(updated_player_health)
+	energy_label_updated.text = "Energy: " + str(updated_energy)
+	happiness_label_updated.text = "Happiness: " + str(updated_happiness)
+	food_label_updated.text = "Food: " + str(updated_food)
+	money_label_updated.text = "Money: " + str(updated_money)
+	correct_label_updated.text = "Total Correct: " + str(updated_alltime_correct)
+	update_time_label(updated_total_time_played)
 
 
 func update_time_label(time):
@@ -262,3 +262,74 @@ func _on_copy_new_code_button_pressed():
 	#$HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text = encode_data()
 	#$HBoxContainer/MarginContainer2/VBoxContainerAfter/GameCodeNew.text = "hello"
 	DisplayServer.clipboard_set(game_code_updated.text)
+
+
+func _on_subtract_bank_button_pressed():
+	var subtract_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4/EnterBankAmount.text
+	if subtract_amount == "":
+		updated_bank -= 1
+		updated_bank = max(updated_bank, 0)
+	else:
+		updated_bank -= int(subtract_amount)
+		updated_bank = max(updated_bank, 0)
+	set_updated_labels()
+	game_code_updated.text = encode_data()
+		
+
+
+func _on_add_bank_button_pressed():
+	var add_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4/EnterBankAmount.text
+	if add_amount == "":
+		updated_bank += 1
+	else:
+		updated_bank += int(add_amount)	
+	set_updated_labels()
+	game_code_updated.text = encode_data()
+
+
+func _on_subtract_xp_button_pressed():
+	var subtract_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3/EnterXPAmount.text
+	if subtract_amount == "":
+		updated_xp -= 1
+		updated_xp = max(updated_xp, 0)
+	else:
+		updated_xp -= int(subtract_amount)
+		updated_xp = max(updated_xp, 0)
+	set_updated_labels()
+	game_code_updated.text = encode_data()
+
+
+func _on_add_xp_button_pressed():
+	var add_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3/EnterXPAmount.text
+	if add_amount == "":
+		updated_xp += 1
+	else:
+		updated_xp += int(add_amount)	
+	set_updated_labels()
+	game_code_updated.text = encode_data()
+
+
+func _on_subtract_level_button_pressed():
+	var subtract_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2/EnterLevelAmount.text
+	if subtract_amount == "":
+		updated_level -= 1
+		updated_level = max(updated_level, 0)
+	else:
+		updated_level -= int(subtract_amount)
+		updated_level = max(updated_level, 0)
+	set_updated_labels()
+	game_code_updated.text = encode_data()
+
+
+func _on_add_level_button_pressed():
+	var add_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2/EnterLevelAmount.text
+	if add_amount == "":
+		updated_level += 1
+	else:
+		updated_level += int(add_amount)	
+	set_updated_labels()
+	game_code_updated.text = encode_data()
+
+
+func _on_change_name_button_pressed():
+	pass # Replace with function body.

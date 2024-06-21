@@ -394,3 +394,10 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/LoadDataButton" to="." method="_on_load_data_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/CopyNewCodeButton" to="." method="_on_copy_new_code_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer11/ChangeNameButton" to="." method="_on_change_name_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2/AddLevelButton" to="." method="_on_add_level_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2/SubtractLevelButton" to="." method="_on_subtract_level_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3/AddXPButton" to="." method="_on_add_xp_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3/SubtractXPButton" to="." method="_on_subtract_xp_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4/AddBankButton" to="." method="_on_add_bank_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4/SubtractBankButton" to="." method="_on_subtract_bank_button_pressed"]
