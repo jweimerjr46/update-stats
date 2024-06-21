@@ -40,6 +40,8 @@ var updated_money
 var updated_alltime_correct
 var updated_total_time_played
 
+var level_dictionary = Global.level_dictionary
+
 var valid_save_code = false
 
 # Called when the node enters the scene tree for the first time.
@@ -311,7 +313,9 @@ func _on_add_xp_button_pressed():
 	if not add_amount:
 		updated_xp += 1
 	else:
-		updated_xp += int(add_amount)	
+		updated_xp += int(add_amount)
+	if updated_xp > level_dictionary[updated_level + 1]:
+		updated_level += 1
 	set_updated_labels()
 	game_code_updated.text = encode_data()
 
