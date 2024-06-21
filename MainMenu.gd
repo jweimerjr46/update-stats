@@ -71,6 +71,13 @@ func _on_load_data_button_pressed():
 				message_label.text = "Data Loaded"
 				game_code_updated.text = encode_data()
 				$HBoxContainer/VBoxContainer/CopyNewCodeButton.disabled = false
+				$HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer11/ChangeNameButton.disabled = false
+				$HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2/AddLevelButton.disabled = false
+				$HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2/SubtractLevelButton.disabled = false
+				$HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3/AddXPButton.disabled = false
+				$HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3/SubtractXPButton.disabled = false
+				$HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4/AddBankButton.disabled = false
+				$HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4/SubtractBankButton.disabled = false
 
 
 func encode_data():
@@ -266,7 +273,7 @@ func _on_copy_new_code_button_pressed():
 
 func _on_subtract_bank_button_pressed():
 	var subtract_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4/EnterBankAmount.text
-	if subtract_amount == "":
+	if not subtract_amount:
 		updated_bank -= 1
 		updated_bank = max(updated_bank, 0)
 	else:
@@ -279,7 +286,7 @@ func _on_subtract_bank_button_pressed():
 
 func _on_add_bank_button_pressed():
 	var add_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4/EnterBankAmount.text
-	if add_amount == "":
+	if not add_amount:
 		updated_bank += 1
 	else:
 		updated_bank += int(add_amount)	
@@ -289,7 +296,7 @@ func _on_add_bank_button_pressed():
 
 func _on_subtract_xp_button_pressed():
 	var subtract_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3/EnterXPAmount.text
-	if subtract_amount == "":
+	if not subtract_amount:
 		updated_xp -= 1
 		updated_xp = max(updated_xp, 0)
 	else:
@@ -301,7 +308,7 @@ func _on_subtract_xp_button_pressed():
 
 func _on_add_xp_button_pressed():
 	var add_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3/EnterXPAmount.text
-	if add_amount == "":
+	if not add_amount:
 		updated_xp += 1
 	else:
 		updated_xp += int(add_amount)	
@@ -311,7 +318,7 @@ func _on_add_xp_button_pressed():
 
 func _on_subtract_level_button_pressed():
 	var subtract_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2/EnterLevelAmount.text
-	if subtract_amount == "":
+	if not subtract_amount:
 		updated_level -= 1
 		updated_level = max(updated_level, 0)
 	else:
@@ -323,7 +330,7 @@ func _on_subtract_level_button_pressed():
 
 func _on_add_level_button_pressed():
 	var add_amount = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2/EnterLevelAmount.text
-	if add_amount == "":
+	if not add_amount:
 		updated_level += 1
 	else:
 		updated_level += int(add_amount)	
@@ -332,4 +339,7 @@ func _on_add_level_button_pressed():
 
 
 func _on_change_name_button_pressed():
-	pass # Replace with function body.
+	if $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer11/EnterNewName.text:
+		updated_player_name = $HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer11/EnterNewName.text
+		set_updated_labels()
+		game_code_updated.text = encode_data()

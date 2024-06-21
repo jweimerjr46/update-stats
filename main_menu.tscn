@@ -303,6 +303,7 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "+"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
@@ -321,6 +322,7 @@ alignment = 1
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "+"
 
 [node name="SubtractLevelButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer2"]
@@ -328,6 +330,7 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "-"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
@@ -345,12 +348,14 @@ alignment = 1
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "+"
 
 [node name="SubtractXPButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "-"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2"]
@@ -368,12 +373,14 @@ alignment = 1
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "+"
 
 [node name="SubtractBankButton" type="Button" parent="HBoxContainer/MarginContainer2/VBoxContainerAfter/HBoxContainer/VBoxContainer2/HBoxContainer4"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "-"
 
 [node name="Label" type="Label" parent="."]
